@@ -17,5 +17,11 @@ module.exports = {
     );
   },
 
-  down: () => {},
+  down: queryInterface => {
+    return queryInterface.bulkDelete(
+      'users',
+      { name: 'Administrador', email: 'admin@gympoint.com' },
+      {}
+    );
+  },
 };
