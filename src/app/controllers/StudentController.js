@@ -81,6 +81,15 @@ class StudentController {
       height,
     });
   }
+
+  async index(req, res) {
+    const students = await Student.findAll({
+      attributes: ['id', 'name', 'email', 'age', 'weight', 'height'],
+      order: ['name'],
+    });
+
+    return res.json(students);
+  }
 }
 
 export default new StudentController();
