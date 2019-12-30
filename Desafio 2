@@ -17,6 +17,7 @@ duration (duração em número de meses);
 price (preço mensal do plano);
 created_at;
 updated_at;
+
 Crie alguns planos como por exemplo:
 
 Start: Plano de 1 mês por R$129;

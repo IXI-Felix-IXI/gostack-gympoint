@@ -7,11 +7,12 @@ import Sequelize from 'sequelize';
 // Importando models
 import User from '../app/models/User';
 import Student from '../app/models/Student';
+import Plan from '../app/models/Plan';
 
 // Importando configurações do banco
 import databaseConfig from '../config/database';
 
-const models = [User, Student];
+const models = [User, Student, Plan];
 
 class Database {
   constructor() {
