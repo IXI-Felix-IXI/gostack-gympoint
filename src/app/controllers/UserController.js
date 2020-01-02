@@ -3,9 +3,7 @@ import User from '../models/User';
 
 class UserController {
   async store(req, res) {
-    //------------------------------------------
     // Schema validation (YUP) do 'req.body'
-    //------------------------------------------
     const schema = Yup.object().shape({
       name: Yup.string().required(),
       email: Yup.string()
