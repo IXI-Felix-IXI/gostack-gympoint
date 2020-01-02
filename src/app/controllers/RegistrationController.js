@@ -87,6 +87,27 @@ class RegistrationController {
 
     return res.json(registration);
   }
+
+  async index(req, res) {
+    const registrations = await Registration.findAll({
+      order: ['student_id'],
+      attributes: ['id', 'start_date', 'end_date', 'price'],
+      include: [
+        {
+          model: Student,
+          as: 'student',
+          attributes: ['id', 'name', 'email'],
+        },
+        {
+          model: Plan,
+          as: 'plan',
+          attributes: ['id', 'title', 'duration', 'price'],
+        },
+      ],
+    });
+
+    return res.json(registrations);
+  }
 }
 
 export default new RegistrationController();
