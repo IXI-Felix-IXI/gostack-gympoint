@@ -155,6 +155,19 @@ class RegistrationController {
 
     return res.json({ id, student_id, plan_id, start_date, end_date });
   }
+
+  async delete(req, res) {
+    const registration = await Registration.findByPk(req.params.id);
+    if (!registration) {
+      return res
+        .status(400)
+        .json({ error: 'Registration does not exists fails.' });
+    }
+
+    await registration.destroy();
+
+    return res.json({ message: 'Record deleted successfully.' });
+  }
 }
 
 export default new RegistrationController();
