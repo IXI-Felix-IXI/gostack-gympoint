@@ -7,6 +7,8 @@ import Student from '../models/Student';
 import Registration from '../models/Registration';
 import Plan from '../models/Plan';
 
+import Mail from '../../lib/Mail';
+
 class RegistrationController {
   async store(req, res) {
     // Schema validation (YUP) do 'req.body'
@@ -86,6 +88,13 @@ class RegistrationController {
       price,
     });
 
+    await Mail.sendMail({
+      to: `${student.name} <${student.email}>`,
+      subject: 'GymPoint - Matrícula realizada',
+      text:
+        'Sejam bem vindo(a) à GymPoint! Sua matrícula já se encontra criada em nosso sistema.',
+    });
+
     return res.json(registration);
   }
 
@@ -159,9 +168,7 @@ class RegistrationController {
   async delete(req, res) {
     const registration = await Registration.findByPk(req.params.id);
     if (!registration) {
-      return res
-        .status(400)
-        .json({ error: 'Registration does not exists fails.' });
+      return res.status(400).json({ error: 'Registration does not exists.' });
     }
 
     await registration.destroy();

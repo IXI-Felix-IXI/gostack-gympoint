@@ -57,7 +57,7 @@ A data de término e preço da matrícula deve ser calculada com base no plano s
 -> Preço calculado: R$327
 
 Quando um aluno realiza uma matrícula ele recebe um e-mail com detalhes da sua inscrição na academia como plano, data de término, valor e 
-uma mensagem de boas-vidas.
+uma mensagem de boas-vindas.
 
 Crie rotas para listagem/cadastro/atualização/remocação de matrículas;
 
