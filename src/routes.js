@@ -7,12 +7,21 @@ import SessionController from './app/controllers/SessionController';
 import StudentController from './app/controllers/StudentController';
 import PlanController from './app/controllers/PlanController';
 import RegistrationController from './app/controllers/RegistrationController';
+import CheckinsController from './app/controllers/CheckinsController';
 
 const routes = new Router();
 
 routes.post('/sessions', SessionController.store);
 
+//-----------------------------------------------------------
+// Checkins
+//-----------------------------------------------------------
+routes.post('/students/:id/checkins', CheckinsController.store);
+routes.get('/students/:id/checkins', CheckinsController.index);
+
+//= ======================================================= =
 // Middleware global de autenticação de sessão
+//= ======================================================= =
 routes.use(auth);
 
 //-----------------------------------------------------------

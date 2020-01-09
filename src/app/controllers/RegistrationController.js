@@ -34,7 +34,7 @@ class RegistrationController {
     }
 
     //-----------------------------------------------------------
-    // Verificando se o id do plano informadno existe
+    // Verificando se o id do plano informado existe
     //-----------------------------------------------------------
     const plan = await Plan.findOne({
       where: { id: req.body.plan_id },
@@ -63,9 +63,19 @@ class RegistrationController {
     const planExists = await Registration.findOne({
       where: {
         student_id: req.body.student_id,
-        [Op.and]: [
-          { start_date: { [Op.lte]: actualDate } },
-          { end_date: { [Op.gte]: actualDate } },
+        [Op.or]: [
+          {
+            [Op.and]: [
+              { start_date: { [Op.lte]: startDate } },
+              { end_date: { [Op.gte]: startDate } },
+            ],
+          },
+          {
+            [Op.and]: [
+              { start_date: { [Op.lte]: endDate } },
+              { end_date: { [Op.gte]: endDate } },
+            ],
+          },
         ],
       },
     });
