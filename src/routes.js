@@ -8,6 +8,7 @@ import StudentController from './app/controllers/StudentController';
 import PlanController from './app/controllers/PlanController';
 import RegistrationController from './app/controllers/RegistrationController';
 import CheckinsController from './app/controllers/CheckinsController';
+import HelpOrdersController from './app/controllers/HelpOrdersController';
 
 const routes = new Router();
 
@@ -18,6 +19,12 @@ routes.post('/sessions', SessionController.store);
 //-----------------------------------------------------------
 routes.post('/students/:id/checkins', CheckinsController.store);
 routes.get('/students/:id/checkins', CheckinsController.index);
+
+//-----------------------------------------------------------
+// Help Orders
+//-----------------------------------------------------------
+routes.post('/students/:id/help-orders', HelpOrdersController.store);
+routes.get('/students/:id/help-orders', HelpOrdersController.index);
 
 //= ======================================================= =
 // Middleware global de autenticação de sessão

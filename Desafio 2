@@ -99,18 +99,23 @@ answer (resposta da academia em texto);
 answer_at (data da resposta da academia);
 created_at;
 updated_at;
-Crie uma rota para a academia listar todos pedidos de auxílio sem resposta;
 
-Crie uma rota para o aluno cadastrar pedidos de auxílio apenas informando seu ID de cadastro (ID do banco de dados);
+=> Crie uma rota para a academia listar todos pedidos de auxílio sem resposta;
+
+
+=>  Crie uma rota para o aluno cadastrar pedidos de auxílio apenas informando seu ID de cadastro (ID do banco de dados);
 
 Exemplo de requisição: POST https://gympoint.com/students/3/help-orders
 
-Crie uma rota para listar todos pedidos de auxílio de um usuário com base em seu ID de cadastro;
+
+=>  Crie uma rota para listar todos pedidos de auxílio de um usuário com base em seu ID de cadastro;
 
 Exemplo de requisição: GET https://gympoint.com/students/3/help-orders
 
-Crie uma rota para a academia responder um pedido de auxílio:
+
+=>  Crie uma rota para a academia responder um pedido de auxílio:
 
 Exemplo de requisição: POST https://gympoint.com/help-orders/1/answer
+
 
 Quando um pedido de auxílio for respondido, o aluno deve receber um e-mail da plataforma com a pergunta e resposta da academia;

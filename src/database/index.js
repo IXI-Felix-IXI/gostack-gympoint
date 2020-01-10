@@ -10,11 +10,12 @@ import Student from '../app/models/Student';
 import Plan from '../app/models/Plan';
 import Registration from '../app/models/Registration';
 import Checkins from '../app/models/Checkins';
+import HelpOrders from '../app/models/HelpOrders';
 
 // Importando configurações do banco
 import databaseConfig from '../config/database';
 
-const models = [User, Student, Plan, Registration, Checkins];
+const models = [User, Student, Plan, Registration, Checkins, HelpOrders];
 
 class Database {
   constructor() {
