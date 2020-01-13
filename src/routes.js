@@ -9,6 +9,7 @@ import PlanController from './app/controllers/PlanController';
 import RegistrationController from './app/controllers/RegistrationController';
 import CheckinsController from './app/controllers/CheckinsController';
 import HelpOrdersController from './app/controllers/HelpOrdersController';
+import ReplyOrderController from './app/controllers/ReplyOrderController';
 
 const routes = new Router();
 
@@ -59,5 +60,11 @@ routes.post('/registrations', RegistrationController.store);
 routes.put('/registrations/:id', RegistrationController.update);
 routes.get('/registrations', RegistrationController.index);
 routes.delete('/registrations/:id', RegistrationController.delete);
+
+//-----------------------------------------------------------
+// Reply Order
+//-----------------------------------------------------------
+routes.put('/help-orders/:id/answer', ReplyOrderController.store);
+routes.get('/help-orders/answer', ReplyOrderController.index);
 
 export default routes;
